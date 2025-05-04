@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/sidebar"
 import { NavUser } from "./nav-user"
 import { ModeToggle } from "./mode-toggle"
+import { LoginModal } from "./modals/ligin-modal"
+import { SignUpModal } from "./modals/lsign-up-modal"
 
 // Menu items.
 const items = [
@@ -84,6 +86,8 @@ export function AppSidebar() {
       {/* footer */}
 
       <SidebarFooter>
+      <LoginModal />
+      <SignUpModal />
         <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>

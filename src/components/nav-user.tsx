@@ -26,6 +26,8 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
+import { LoginModal } from "./modals/ligin-modal"
+import { SignUpModal } from "./modals/lsign-up-modal"
 export function NavUser({
   user,
 }: {
@@ -78,21 +80,33 @@ export function NavUser({
                 </div>
               </div>
             </DropdownMenuLabel>
+
+
+
+
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
+
+                
+
+
               <DropdownMenuItem>
                 <UserCircleIcon />
                 Account
               </DropdownMenuItem>
+
               <DropdownMenuItem>
                 <CreditCardIcon />
                 Billing
               </DropdownMenuItem>
+
               <DropdownMenuItem>
                 <BellIcon />
                 Notifications
               </DropdownMenuItem>
+
             </DropdownMenuGroup>
+
             <DropdownMenuSeparator />
             <DropdownMenuItem>
               <LogOutIcon />
