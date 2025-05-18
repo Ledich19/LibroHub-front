@@ -1,6 +1,5 @@
 // import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { ApolloWrapper } from "./ApolloWrapper";
 
@@ -25,18 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" suppressHydrationWarning>
+    <html lang="ru" data-theme="dark" suppressHydrationWarning >
       <body
       // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+    
           <ApolloWrapper>{children}</ApolloWrapper>
-        </ThemeProvider>
+     
       </body>
     </html>
   );

@@ -26,8 +26,6 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { LoginModal } from "./modals/ligin-modal"
-import { SignUpModal } from "./modals/lsign-up-modal"
 export function NavUser({
   user,
 }: {

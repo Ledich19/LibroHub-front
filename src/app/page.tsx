@@ -37,6 +37,7 @@ export default async function Home() {
           height={38}
           priority
         />
+        <button className="btn">Default</button>
 
         <Link className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="/app">
           <button>App</button>
