@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 
-import { BookIcon,  HomeIcon,  LogInIcon } from "lucide-react";
+import { BookIcon,  HomeIcon,  LibraryBigIcon,  LogInIcon, UserPenIcon } from "lucide-react";
 
 const SidebarBody = () => {
   return (
@@ -11,19 +11,31 @@ const SidebarBody = () => {
       className="flex flex-1 flex-col overflow-y-auto overflow-x-hidden"
     ><ul className="menu bg-base-200 rounded-box w-56">
     <li>
-      <Link href="/app">
+      <Link href="/">
        <HomeIcon />
-        Item 2
+        Головна
       </Link>
     </li>
     <li>
-      <Link href="/app/books">
+      <Link href="/authors">
+      <UserPenIcon />
+        Автори
+      </Link>
+    </li>
+    <li>
+      <Link href="/series">
+      <LibraryBigIcon />
+        Серіі
+      </Link>
+    </li>
+    <li>
+      <Link href="/books">
        <BookIcon />
-        Item 1
+        Книги
       </Link>
     </li>
     <li>
-      <Link href="/app/auth/login">
+      <Link href="/auth/login">
         <LogInIcon />
         Item 3
       </Link>

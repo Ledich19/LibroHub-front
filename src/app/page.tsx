@@ -1,27 +1,9 @@
 // app/page.tsx
 import { LoginModal } from "@/components/modals/ligin-modal";
-import { getClient } from "@/lib/apollo-server";
-import { gql, useQuery, query } from "@apollo/client";
-
 import Image from "next/image";
 import Link from "next/link";
 
-const QUERY = gql`
-   query Countries {
-    countries {
-      code
-      name
-      emoji
-    }
-  }
-`;
 export default async function Home() {
-  // const { data, loading, error } = useQuery(MY_QUERY);
-  // console.log(data);
-
-  const { data } = await getClient().query({ query: QUERY });
-  // const [queryRef] = useBackgroundQuery(MY_QUERY);
-  console.log(data.components);
 
 
   return (
@@ -51,14 +33,14 @@ export default async function Home() {
 
 
         <div className="grid grid-cols-2 gap-4">
-          {data.countries.map((country: any) => (
+          {/* {data.countries.map((country: any) => (
             <div key={country.code} className="flex flex-col gap-2">
               <h3>{country.name}</h3>
               <p>
                 {country.code} - {country.emoji}
               </p>
             </div>
-          ))}
+          ))} */}
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center"></footer>

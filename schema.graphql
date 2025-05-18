@@ -1,0 +1,104 @@
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type Author {
+  bio: String
+  birthDate: Date
+  books: [Book!]
+  country: String
+  createdAt: Date
+  deathDate: Date
+  email: String
+  facebook: String
+  firstName: String
+  gender: String
+  id: ID
+  instagram: String
+  languageCode: String
+  lastName: String
+  linkedin: String
+  middleName: String
+  penName: String
+  photoUrl: String
+  slug: String
+  status: String
+  twitter: String
+  updatedAt: Date
+}
+
+type Book {
+  authors: [Author!]
+  coverUrl: String
+  description: String
+  downloadUrl: String
+  id: ID
+  isbn: String
+  language: language
+  languageCode: String
+  pageCount: Int
+  previewUrl: String
+  publishedDate: String
+  publisher: String
+  rating: Float
+  series: series
+  seriesId: Int
+  seriesIndex: Int
+  slug: String
+  title: String
+  totalReviews: Int
+}
+
+"""
+A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar Date
+
+type Mutation {
+  login(email: String!, password: String!): AuthPayload
+  signup(email: String!, name: String!, password: String!): AuthPayload
+  updateHello(newName: String!): String
+}
+
+type Query {
+  book(id: Int!): Book
+  books(limit: Int = 10, offset: Int = 0): [Book!]
+  hello(name: String): String
+
+  """Get the current authenticated user"""
+  me: User
+  series(id: Int!): series
+  serieses(limit: Int = 10, offset: Int = 0): [series!]
+}
+
+type User {
+  createdAt: Date
+  email: String
+  id: ID
+  name: String
+  updatedAt: Date
+}
+
+type language {
+  code: String
+  countryCode: String
+  name: String
+  nativeName: String
+}
+
+type series {
+  authors: [Author!]
+  averageRating: Float
+  books: [Book!]
+  coverUrl: String
+  createdAt: Date
+  description: String
+  id: ID
+  isPublished: Boolean
+  isVerified: Boolean
+  rating: Float
+  slug: String
+  title: String
+  updatedAt: Date
+}

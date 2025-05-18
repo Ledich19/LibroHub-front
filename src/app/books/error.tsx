@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-export default function Error({ error, reset }: { error: Error; reset: () => void }) {
+export default function ErrorBooks({ error, reset }: Readonly<{ error: Error; reset: () => void }>) {
   return (
     <div>
       <h2>Произошла ошибка</h2>

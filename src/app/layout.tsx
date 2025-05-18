@@ -2,6 +2,8 @@
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ApolloWrapper } from "./ApolloWrapper";
+import Sidebar from "@/components/Sidebar/Sidebar";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -26,11 +28,16 @@ export default function RootLayout({
   return (
     <html lang="ru" data-theme="dark" suppressHydrationWarning >
       <body
+        className="flex min-h-screen"
       // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-    
-          <ApolloWrapper>{children}</ApolloWrapper>
-     
+        <ApolloWrapper>
+          <Sidebar />
+          <main className="flex-1">
+            <Breadcrumbs />
+            {children}
+          </main>
+        </ApolloWrapper>
       </body>
     </html>
   );
