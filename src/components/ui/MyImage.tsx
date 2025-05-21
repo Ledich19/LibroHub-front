@@ -15,10 +15,10 @@ interface MyImageProps {
 
 const MyImage = ({ src, alt, defaultImage, defaultAlt, ...props }: MyImageProps) => {
   const fallback = defaultImage;
-  const [imageSrc, setImageSrc] = useState(src || fallback);
+  const [imageSrc, setImageSrc] = useState(src ?? fallback);
 
   useEffect(() => {
-    setImageSrc(src || fallback);
+    setImageSrc(src ?? fallback);
   }, [src, fallback]);
 
   const handleError = () => {
@@ -30,12 +30,12 @@ const MyImage = ({ src, alt, defaultImage, defaultAlt, ...props }: MyImageProps)
   return (
     <Image
       src={imageSrc}
-      alt={alt || defaultAlt || 'Image not available'}
+      alt={alt ?? defaultAlt ?? 'Image not available'}
       onError={handleError}
       loading="lazy"
       {...props}
-      width={props.width || 500}
-      height={props.height || 500}
+      width={props.width ?? 500}
+      height={props.height ?? 500}
       placeholder="blur"
       blurDataURL={defaultImage}
     />

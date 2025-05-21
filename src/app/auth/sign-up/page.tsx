@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+// import { Button } from "@/components/ui/button"
+// import { Input } from "@/components/ui/input"
+// import { Label } from "@/components/ui/label"
 // import { routes } from "@/router"
 // import { Link } from "react-router"
 import { useState } from "react"
@@ -34,7 +34,7 @@ export function SignUpForm({
 
   return (
     <form className={cn("flex flex-col gap-6", className)} {...props}>
-      <div className="flex flex-col items-center gap-2 text-center">
+      {/* <div className="flex flex-col items-center gap-2 text-center">
         <h1 className="text-2xl font-bold">Create account</h1>
 
       </div>
@@ -77,10 +77,8 @@ export function SignUpForm({
       </div>
       <div className="text-center text-sm">
         Don&apos;t have an account?{" "}
-        {/* <Link to={routes.auth.login} className="underline underline-offset-4">
-          Login
-        </Link> */}
-      </div>
+       
+      </div> */}
     </form>
   )
 }

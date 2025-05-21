@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
-export const BOOKS_QUERY = gql`
-  query Books {
+export const BOOKS_WITH_FILTER_QUERY = gql`
+  query BooksWithFilters {
     books(limit: 20, offset: 0) {
       coverUrl
       description
@@ -28,6 +28,30 @@ export const BOOKS_QUERY = gql`
         penName
         slug
         photoUrl
+      }
+    }
+    booksFilters {
+      ... on FilterRange {
+        type
+        max
+        min
+        name
+        presets
+      }
+      ... on FilterSearch {
+        type
+        name
+        placeholder
+      }
+      ... on FilterSelect {
+        isMulti
+        isSearchable
+        name
+        type
+        options {
+          label
+          value
+        }
       }
     }
   }

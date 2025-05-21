@@ -55,6 +55,41 @@ A date string, such as 2007-12-03, compliant with the `full-date` format outline
 """
 scalar Date
 
+union Filter = FilterRange | FilterSearch | FilterSelect
+
+type FilterOption {
+  label: String!
+  value: String!
+}
+
+type FilterRange {
+  max: Int!
+  min: Int!
+  name: String!
+  presets: [String!]
+  type: FilterType
+}
+
+type FilterSearch {
+  name: String!
+  placeholder: String!
+  type: FilterType
+}
+
+type FilterSelect {
+  isMulti: Boolean
+  isSearchable: Boolean
+  name: String!
+  options: [FilterOption!]!
+  type: FilterType
+}
+
+enum FilterType {
+  RANGE
+  SEARCH
+  SELECT
+}
+
 type Mutation {
   login(email: String!, password: String!): AuthPayload
   signup(email: String!, name: String!, password: String!): AuthPayload
@@ -64,6 +99,7 @@ type Mutation {
 type Query {
   book(id: Int!): Book
   books(limit: Int = 10, offset: Int = 0): [Book!]
+  booksFilters: [Filter!]
   hello(name: String): String
 
   """Get the current authenticated user"""
