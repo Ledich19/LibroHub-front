@@ -97,15 +97,23 @@ type Mutation {
 }
 
 type Query {
+  author(id: Int!): Author
+  authors(ids: [String!]!): [Author!]
   book(id: Int!): Book
-  books(limit: Int = 10, offset: Int = 0): [Book!]
+  books(authors: [Int!], genres: [Int!], language: [String!], limit: Int = 10, offset: Int = 0, pages: Int, rating: RangeInput, search: String, series: [Int!], sort_by: String, tags: [Int!], year: RangeInput): [Book!]
   booksFilters: [Filter!]
   hello(name: String): String
-
-  """Get the current authenticated user"""
-  me: User
   series(id: Int!): series
   serieses(limit: Int = 10, offset: Int = 0): [series!]
+  user(id: Int!): User
+
+  """Get the current authenticated user"""
+  viewer: User
+}
+
+input RangeInput {
+  max: Int!
+  min: Int!
 }
 
 type User {

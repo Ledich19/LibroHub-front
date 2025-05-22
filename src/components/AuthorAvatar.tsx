@@ -11,12 +11,15 @@ const AuthorAvatar = ({ author }: { author: Author }) => {
 
     <div className="w-12 h-12 rounded"  >
       <MyImage
-        src={author.photoUrl ?? '/image-not-available-author.png'}
+        src={author.photoUrl ?? '/image-not-available-author.webp'}
         alt={penName ?? authorName}
-        defaultImage="/image-not-available-author.png"
+        defaultImage="/image-not-available-author.webp"
         defaultAlt="Author image not available"
         className="w-full h-24 object-contain"
         style={{ objectFit: "cover" }}
+        width={48}
+        height={48}
+        
       />
     </div>
   </div>

@@ -6,6 +6,7 @@ import { FacetedFilter } from "@/components/ui/FacetedFilter";
 import SearchInput from "@/components/ui/SearchInput";
 import { useEffect, useState } from "react";
 import { isArray } from "@apollo/client/utilities";
+import { ParsedUrlQuery } from "querystring";
 
 
 
@@ -41,7 +42,7 @@ function serializeFilters(filters: Filters): string {
   return params.toString();
 }
 
-const Filters = ({ filtersData }: { filtersData: NonNullable<BooksWithFiltersQuery["booksFilters"]> }) => {
+const Filters = ({ filtersData, currentFilters }: { filtersData: NonNullable<BooksWithFiltersQuery["booksFilters"]>, currentFilters: ParsedUrlQuery }) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -109,10 +110,8 @@ const Filters = ({ filtersData }: { filtersData: NonNullable<BooksWithFiltersQue
             />;
           default:
             return <></>
-
         }
       })
-
     }
 
     <button

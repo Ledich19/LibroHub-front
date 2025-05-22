@@ -34,10 +34,8 @@ const MyImage = ({ src, alt, defaultImage, defaultAlt, ...props }: MyImageProps)
       onError={handleError}
       loading="lazy"
       {...props}
-      width={props.width ?? 500}
-      height={props.height ?? 500}
       placeholder="blur"
-      blurDataURL={defaultImage}
+      blurDataURL="data:..."
     />
   );
 };
