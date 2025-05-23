@@ -21,7 +21,7 @@ export const { getClient } = registerApolloClient(() => {
   });
 
   const httpLink = new HttpLink({
-    uri: "http://127.0.0.1:4000/graphql",
+    uri: process.env.NEXT_PUBLIC_GRAPH_QL_URL,
     credentials: "include", // Для кросс-доменных запросов
   });
 

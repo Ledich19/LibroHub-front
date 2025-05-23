@@ -7,9 +7,6 @@ import AuthorAvatar from "@/components/AuthorAvatar";
 import Filters from "./Filters";
 import { ParsedUrlQuery } from "querystring";
 
-
-
-
 const Books = async ({ searchParams }: { searchParams: ParsedUrlQuery }) => {
   console.log("-----searchParams", await searchParams);
   const variables = {

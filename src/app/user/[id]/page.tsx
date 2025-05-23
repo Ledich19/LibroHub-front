@@ -30,7 +30,7 @@ export default async function UserPage({ params }: Props) {
 
   // 5. Отображаем данные
   return (
-    <div>
+    <>
       <h1>{user.name}</h1>
       {isOwner && <p>Это ваш профиль</p>}
       Чейто профиль
@@ -38,6 +38,6 @@ export default async function UserPage({ params }: Props) {
       <button className='btn btn-outline btn-primary'>Добавить серию</button>
       <button className='btn btn-outline btn-primary'>Добавить автора</button>
 
-    </div>
+    </>
   );
 }

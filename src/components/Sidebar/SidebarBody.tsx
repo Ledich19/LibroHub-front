@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 
-import { BookIcon,  HomeIcon,  LibraryBigIcon,  LogInIcon, UserPenIcon } from "lucide-react";
+// import { BookIcon,  HomeIcon,  LibraryBigIcon,  LogInIcon, UserPenIcon } from "lucide-react";
 import Image from "next/image";
 
 const SidebarBody = () => {
@@ -49,7 +49,7 @@ const SidebarBody = () => {
       <Link href="/auth/login">
         {/* <LogInIcon /> */}
         <Image src="/login_icon.png" alt="Logo" width={50} height={50} />
-        Item 3
+        login
       </Link>
     </li>
   </ul>
