@@ -117,6 +117,7 @@ input RangeInput {
 }
 
 type User {
+  avatarUrl: String
   createdAt: Date
   email: String
   id: ID
